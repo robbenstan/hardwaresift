@@ -1,0 +1,165 @@
+Dump of assembler code for function econvolve<float>(float*, float const*, int, int, float const*, int):
+   0x0000000000407ff8 <+0>:	push   %rbp
+   0x0000000000407ff9 <+1>:	mov    %rsp,%rbp
+   0x0000000000407ffc <+4>:	sub    $0x70,%rsp
+   0x0000000000408000 <+8>:	callq  0x402780 <mcount@plt>
+   0x0000000000408005 <+13>:	mov    %rdi,-0x48(%rbp)
+   0x0000000000408009 <+17>:	mov    %rsi,-0x50(%rbp)
+   0x000000000040800d <+21>:	mov    %edx,-0x54(%rbp)
+   0x0000000000408010 <+24>:	mov    %ecx,-0x58(%rbp)
+   0x0000000000408013 <+27>:	mov    %r8,-0x60(%rbp)
+   0x0000000000408017 <+31>:	mov    %r9d,-0x64(%rbp)
+=> 0x000000000040801b <+35>:	mov    -0x64(%rbp),%eax
+   0x000000000040801e <+38>:	add    %eax,%eax
+   0x0000000000408020 <+40>:	lea    0x1(%rax),%esi
+   0x0000000000408023 <+43>:	mov    -0x64(%rbp),%ecx
+   0x0000000000408026 <+46>:	mov    -0x58(%rbp),%edx
+   0x0000000000408029 <+49>:	mov    -0x54(%rbp),%eax
+   0x000000000040802c <+52>:	mov    %esi,%r8d
+   0x000000000040802f <+55>:	mov    %eax,%esi
+   0x0000000000408031 <+57>:	mov    $0x411868,%edi
+   0x0000000000408036 <+62>:	mov    $0x0,%eax
+   0x000000000040803b <+67>:	callq  0x402390 <printf@plt>
+   0x0000000000408040 <+72>:	movl   $0x0,-0x10(%rbp)
+   0x0000000000408047 <+79>:	jmpq   0x40821d <econvolve<float>(float*, float const*, int, int, float const*, int)+549>
+   0x000000000040804c <+84>:	movl   $0x0,-0xc(%rbp)
+   0x0000000000408053 <+91>:	jmpq   0x4081dd <econvolve<float>(float*, float const*, int, int, float const*, int)+485>
+   0x0000000000408058 <+96>:	mov    $0x0,%eax
+   0x000000000040805d <+101>:	mov    %eax,-0x8(%rbp)
+   0x0000000000408060 <+104>:	mov    -0x60(%rbp),%rax
+   0x0000000000408064 <+108>:	mov    %rax,-0x38(%rbp)
+   0x0000000000408068 <+112>:	mov    -0x64(%rbp),%eax
+   0x000000000040806b <+115>:	mov    -0xc(%rbp),%edx
+   0x000000000040806e <+118>:	mov    %edx,%ecx
+   0x0000000000408070 <+120>:	sub    %eax,%ecx
+   0x0000000000408072 <+122>:	mov    %ecx,%eax
+   0x0000000000408074 <+124>:	cltq   
+   0x0000000000408076 <+126>:	shl    $0x2,%rax
+   0x000000000040807a <+130>:	add    -0x50(%rbp),%rax
+   0x000000000040807e <+134>:	mov    %rax,-0x30(%rbp)
+   0x0000000000408082 <+138>:	mov    -0x64(%rbp),%eax
+   0x0000000000408085 <+141>:	mov    -0xc(%rbp),%edx
+   0x0000000000408088 <+144>:	mov    %edx,%ecx
+   0x000000000040808a <+146>:	sub    %eax,%ecx
+   0x000000000040808c <+148>:	mov    %ecx,%eax
+   0x000000000040808e <+150>:	mov    %eax,-0x1c(%rbp)
+   0x0000000000408091 <+153>:	movl   $0x0,-0x20(%rbp)
+   0x0000000000408098 <+160>:	lea    -0x1c(%rbp),%rdx
+   0x000000000040809c <+164>:	lea    -0x20(%rbp),%rax
+   0x00000000004080a0 <+168>:	mov    %rdx,%rsi
+   0x00000000004080a3 <+171>:	mov    %rax,%rdi
+   0x00000000004080a6 <+174>:	callq  0x4082b8 <std::max<int>(int const&, int const&)>
+   0x00000000004080ab <+179>:	mov    (%rax),%eax
+   0x00000000004080ad <+181>:	cltq   
+   0x00000000004080af <+183>:	shl    $0x2,%rax
+   0x00000000004080b3 <+187>:	add    -0x50(%rbp),%rax
+   0x00000000004080b7 <+191>:	mov    %rax,-0x28(%rbp)
+   0x00000000004080bb <+195>:	mov    -0x28(%rbp),%rax
+   0x00000000004080bf <+199>:	mov    (%rax),%eax
+   0x00000000004080c1 <+201>:	mov    %eax,-0x4(%rbp)
+   0x00000000004080c4 <+204>:	jmp    0x4080eb <econvolve<float>(float*, float const*, int, int, float const*, int)+243>
+   0x00000000004080c6 <+206>:	mov    -0x38(%rbp),%rax
+   0x00000000004080ca <+210>:	movss  (%rax),%xmm0
+   0x00000000004080ce <+214>:	mulss  -0x4(%rbp),%xmm0
+   0x00000000004080d3 <+219>:	movss  -0x8(%rbp),%xmm1
+   0x00000000004080d8 <+224>:	addss  %xmm1,%xmm0
+   0x00000000004080dc <+228>:	movss  %xmm0,-0x8(%rbp)
+   0x00000000004080e1 <+233>:	addq   $0x4,-0x38(%rbp)
+   0x00000000004080e6 <+238>:	addq   $0x4,-0x30(%rbp)
+   0x00000000004080eb <+243>:	mov    -0x30(%rbp),%rax
+   0x00000000004080ef <+247>:	cmp    -0x28(%rbp),%rax
+   0x00000000004080f3 <+251>:	setbe  %al
+   0x00000000004080f6 <+254>:	test   %al,%al
+   0x00000000004080f8 <+256>:	jne    0x4080c6 <econvolve<float>(float*, float const*, int, int, float const*, int)+206>
+   0x00000000004080fa <+258>:	mov    -0x64(%rbp),%eax
+   0x00000000004080fd <+261>:	mov    -0xc(%rbp),%edx
+   0x0000000000408100 <+264>:	add    %edx,%eax
+   0x0000000000408102 <+266>:	mov    %eax,-0x14(%rbp)
+   0x0000000000408105 <+269>:	mov    -0x54(%rbp),%eax
+   0x0000000000408108 <+272>:	sub    $0x1,%eax
+   0x000000000040810b <+275>:	mov    %eax,-0x18(%rbp)
+   0x000000000040810e <+278>:	lea    -0x14(%rbp),%rdx
+   0x0000000000408112 <+282>:	lea    -0x18(%rbp),%rax
+   0x0000000000408116 <+286>:	mov    %rdx,%rsi
+   0x0000000000408119 <+289>:	mov    %rax,%rdi
+   0x000000000040811c <+292>:	callq  0x4082e9 <std::min<int>(int const&, int const&)>
+   0x0000000000408121 <+297>:	mov    (%rax),%eax
+   0x0000000000408123 <+299>:	cltq   
+   0x0000000000408125 <+301>:	shl    $0x2,%rax
+   0x0000000000408129 <+305>:	add    -0x50(%rbp),%rax
+   0x000000000040812d <+309>:	mov    %rax,-0x28(%rbp)
+   0x0000000000408131 <+313>:	jmp    0x40815f <econvolve<float>(float*, float const*, int, int, float const*, int)+359>
+   0x0000000000408133 <+315>:	mov    -0x38(%rbp),%rax
+   0x0000000000408137 <+319>:	movss  (%rax),%xmm1
+   0x000000000040813b <+323>:	mov    -0x30(%rbp),%rax
+   0x000000000040813f <+327>:	movss  (%rax),%xmm0
+   0x0000000000408143 <+331>:	mulss  %xmm1,%xmm0
+   0x0000000000408147 <+335>:	movss  -0x8(%rbp),%xmm1
+   0x000000000040814c <+340>:	addss  %xmm1,%xmm0
+   0x0000000000408150 <+344>:	movss  %xmm0,-0x8(%rbp)
+   0x0000000000408155 <+349>:	addq   $0x4,-0x38(%rbp)
+   0x000000000040815a <+354>:	addq   $0x4,-0x30(%rbp)
+   0x000000000040815f <+359>:	mov    -0x30(%rbp),%rax
+   0x0000000000408163 <+363>:	cmp    -0x28(%rbp),%rax
+   0x0000000000408167 <+367>:	setb   %al
+   0x000000000040816a <+370>:	test   %al,%al
+   0x000000000040816c <+372>:	jne    0x408133 <econvolve<float>(float*, float const*, int, int, float const*, int)+315>
+   0x000000000040816e <+374>:	mov    -0x30(%rbp),%rax
+   0x0000000000408172 <+378>:	mov    (%rax),%eax
+   0x0000000000408174 <+380>:	mov    %eax,-0x4(%rbp)
+   0x0000000000408177 <+383>:	mov    -0x64(%rbp),%eax
+   0x000000000040817a <+386>:	mov    -0xc(%rbp),%edx
+   0x000000000040817d <+389>:	add    %edx,%eax
+   0x000000000040817f <+391>:	cltq   
+   0x0000000000408181 <+393>:	shl    $0x2,%rax
+   0x0000000000408185 <+397>:	add    -0x50(%rbp),%rax
+   0x0000000000408189 <+401>:	mov    %rax,-0x28(%rbp)
+   0x000000000040818d <+405>:	jmp    0x4081b4 <econvolve<float>(float*, float const*, int, int, float const*, int)+444>
+   0x000000000040818f <+407>:	mov    -0x38(%rbp),%rax
+   0x0000000000408193 <+411>:	movss  (%rax),%xmm0
+   0x0000000000408197 <+415>:	mulss  -0x4(%rbp),%xmm0
+   0x000000000040819c <+420>:	movss  -0x8(%rbp),%xmm1
+   0x00000000004081a1 <+425>:	addss  %xmm1,%xmm0
+   0x00000000004081a5 <+429>:	movss  %xmm0,-0x8(%rbp)
+   0x00000000004081aa <+434>:	addq   $0x4,-0x38(%rbp)
+   0x00000000004081af <+439>:	addq   $0x4,-0x30(%rbp)
+   0x00000000004081b4 <+444>:	mov    -0x30(%rbp),%rax
+   0x00000000004081b8 <+448>:	cmp    -0x28(%rbp),%rax
+   0x00000000004081bc <+452>:	setbe  %al
+   0x00000000004081bf <+455>:	test   %al,%al
+   0x00000000004081c1 <+457>:	jne    0x40818f <econvolve<float>(float*, float const*, int, int, float const*, int)+407>
+   0x00000000004081c3 <+459>:	mov    -0x48(%rbp),%rax
+   0x00000000004081c7 <+463>:	mov    -0x8(%rbp),%edx
+   0x00000000004081ca <+466>:	mov    %edx,(%rax)
+   0x00000000004081cc <+468>:	mov    -0x58(%rbp),%eax
+   0x00000000004081cf <+471>:	cltq   
+   0x00000000004081d1 <+473>:	shl    $0x2,%rax
+   0x00000000004081d5 <+477>:	add    %rax,-0x48(%rbp)
+   0x00000000004081d9 <+481>:	addl   $0x1,-0xc(%rbp)
+   0x00000000004081dd <+485>:	mov    -0xc(%rbp),%eax
+   0x00000000004081e0 <+488>:	cmp    -0x54(%rbp),%eax
+   0x00000000004081e3 <+491>:	setl   %al
+   0x00000000004081e6 <+494>:	test   %al,%al
+   0x00000000004081e8 <+496>:	jne    0x408058 <econvolve<float>(float*, float const*, int, int, float const*, int)+96>
+   0x00000000004081ee <+502>:	mov    -0x54(%rbp),%eax
+   0x00000000004081f1 <+505>:	cltq   
+   0x00000000004081f3 <+507>:	shl    $0x2,%rax
+   0x00000000004081f7 <+511>:	add    %rax,-0x50(%rbp)
+   0x00000000004081fb <+515>:	mov    -0x54(%rbp),%eax
+   0x00000000004081fe <+518>:	imul   -0x58(%rbp),%eax
+   0x0000000000408202 <+522>:	movslq %eax,%rdx
+   0x0000000000408205 <+525>:	mov    $0x0,%eax
+   0x000000000040820a <+530>:	sub    %rdx,%rax
+   0x000000000040820d <+533>:	shl    $0x2,%rax
+   0x0000000000408211 <+537>:	add    $0x4,%rax
+   0x0000000000408215 <+541>:	add    %rax,-0x48(%rbp)
+   0x0000000000408219 <+545>:	addl   $0x1,-0x10(%rbp)
+   0x000000000040821d <+549>:	mov    -0x10(%rbp),%eax
+   0x0000000000408220 <+552>:	cmp    -0x58(%rbp),%eax
+   0x0000000000408223 <+555>:	setl   %al
+   0x0000000000408226 <+558>:	test   %al,%al
+   0x0000000000408228 <+560>:	jne    0x40804c <econvolve<float>(float*, float const*, int, int, float const*, int)+84>
+   0x000000000040822e <+566>:	leaveq 
+   0x000000000040822f <+567>:	retq   
+End of assembler dump.
+

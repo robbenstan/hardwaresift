@@ -1,0 +1,49 @@
+siftpp: lodaing PGM image '../hardwaresift/canonical.pgm' ... read 640 x 480 pixels
+siftpp: computing Gaussian scale space
+siftpp:   number of octaves     : 3
+siftpp:   first octave          : 0
+siftpp:   levels per octave     : 3
+M = 640, N = 480, W = 7, filter is 15 x 1
+M = 480, N = 640, W = 7, filter is 15 x 1
+M = 640, N = 480, W = 5, filter is 11 x 1
+M = 480, N = 640, W = 5, filter is 11 x 1
+M = 640, N = 480, W = 7, filter is 15 x 1
+M = 480, N = 640, W = 7, filter is 15 x 1
+M = 640, N = 480, W = 8, filter is 17 x 1
+M = 480, N = 640, W = 8, filter is 17 x 1
+M = 640, N = 480, W = 10, filter is 21 x 1
+M = 480, N = 640, W = 10, filter is 21 x 1
+M = 640, N = 480, W = 13, filter is 27 x 1
+M = 480, N = 640, W = 13, filter is 27 x 1
+M = 320, N = 240, W = 5, filter is 11 x 1
+M = 240, N = 320, W = 5, filter is 11 x 1
+M = 320, N = 240, W = 7, filter is 15 x 1
+M = 240, N = 320, W = 7, filter is 15 x 1
+M = 320, N = 240, W = 8, filter is 17 x 1
+M = 240, N = 320, W = 8, filter is 17 x 1
+M = 320, N = 240, W = 10, filter is 21 x 1
+M = 240, N = 320, W = 10, filter is 21 x 1
+M = 320, N = 240, W = 13, filter is 27 x 1
+M = 240, N = 320, W = 13, filter is 27 x 1
+M = 160, N = 120, W = 5, filter is 11 x 1
+M = 120, N = 160, W = 5, filter is 11 x 1
+M = 160, N = 120, W = 7, filter is 15 x 1
+M = 120, N = 160, W = 7, filter is 15 x 1
+M = 160, N = 120, W = 8, filter is 17 x 1
+M = 120, N = 160, W = 8, filter is 17 x 1
+M = 160, N = 120, W = 10, filter is 21 x 1
+M = 120, N = 160, W = 10, filter is 21 x 1
+M = 160, N = 120, W = 13, filter is 27 x 1
+M = 120, N = 160, W = 13, filter is 27 x 1
+siftpp: Gaussian scale space completed
+siftpp: running detector  
+siftpp:   threshold             : 0.00666667
+siftpp:   edge-threshold        : 10
+siftpp: detector completed with 447 keypoints
+siftpp: computing orientations and descriptors
+siftpp:   write keypoints to    : '../hardwaresift/canonical.key'
+siftpp:   floating point descr. : no
+siftpp:   binary descr.         : no
+siftpp:   unnormalized descr.   : no
+siftpp:   descr. magnif.        : 3
+siftpp: job completed
