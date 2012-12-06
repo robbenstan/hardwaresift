@@ -23,6 +23,22 @@ During execution of the SIFT algorithm, our new ISA-level instruction will call 
 %\label{fig:Run1_max_errors}
 %\end{figure}
 
+\subsection{ISA Addition}
+ne of the enhancements in our architecture to improve the performance of the SIFT algorithm is the addition of an instruction to perform the convolution function. Analysis of a profile run of the SIFT process shows that approximately 35% of the time to process an image is spent in the convolution function.
+
+Analyzing a disassembly of the the econvolve function from our reference implementation of SIFT shows that it consists of 162 instructions. While some of these instructions are loops, I will ignore the loop cycles in this analysis since the same loops will be executed on both a traditional CPU and by our Convolution Module. On a traditional CPU this routine must be run for each row of the image being processed. Our architecture adds a single instruction , CONV, to perform a convolve on a row of image data. This function takes 3 arguments, the size of the row in words, a source buffer address, and a destination buffer address. For example, a call to perform a convolve on a 512-byte row of data located at address 0x562B and place the result in address 0xF54A would be notated as:
+
+CONV 512, 0x562B, 0xF54A
+
+\begin{center}
+\includegraphics[width=90mm]{ISA.png}%
+\captionof{figure}{}\label{fig:ISA}%
+\end{center}
+
+When called, CONV will place the data into a functional unit which performs the actual convolve. This architecture will have 512 of these functional units, with tasking assigned to each assigned by a Tomasulo-type algorithm. For ease of analysis, we will assume that each unit exactly emulates our reference convolve function, so each unit will take around 162 cycles * the average cost-per-instruction to convolute a row of image data. I will assume a CPI of 1 for all calculations, since it cancels out in the comparison. This gives a cost of 162 cycles*512=82,944 cycles on a traditional CPU to perform a convolution for a single image.
+
+In our architecture, the convolutions are performed in parallel, with a single cycle delay to load each row of data into a CONV functional unit. There is also a 1-cycle delay to transfer each result from the functional unit to the destination buffer. This gives a total time of 164 cycles to perform CONV on each row of image data. However, since the operations are parallelized in this architecture, the total time to perform a convolve on an entire 512x512 pixel image is 164 cycles for the first image, plus 512 cycles to load the rest of the rows, for a total time of 676 cycles. This yields a speedup of 82,944/676=122.7 times faster for the convolution function.
+
 \subsection{Cache design}
 \subsubsection{Organization}
 Organization
