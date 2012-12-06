@@ -1,0 +1,11 @@
+\section{Background}
+\subsection{Application}
+For the purposes of this project, the application space of security video surveillance is to be targeted. Our system is designed to allow a security camera's live stream to be analyzed in near-real time, allowing for rapid feature recognition (facial, object, etc). This implementation assumes a fixed input type from a surveillance camera and a reliable processing backend platform.
+
+This usage scenario serves to provide several parameters for the system design. As the input stream from the camera is reliable, we will use the assumption that new data is always available for processing. Because many security systems rely upon custom hardware, we can design a system using some flexibility in terms of power and space requirements. Finally, because we can assume that every frame captured is to be analyzed, we can design our system to explicitly streamline and accelerate image access and processing.
+
+\subsection{SIFT}
+Simply stated, SIFT (Scale-Invariant Feature Transform) is an image processing algorithm. It is used for image recognition and is noted for its ability to recognize elements of an image even when they are rotated or scaled in unusual ways. A full treatment of the algorithm is best left to other papers, but a look at it's core will show what our architecture will impact.
+
+A key part of the SIFT algorithm is scale space construction. This process begins by scaling the image n times (usually shrinking the image). At each scale, a Gaussian blur is applied to the image, generating a new image. This blurring is repeated m times per scale. A set of blurred images at a given scale is known as an octave. In total then, the Gaussian blur is applied to every pixel in n x m images (every image in every octave). After profiling an implementation of SIFT we decided that this part of the algorithm was a good candidate for speedup.
+
